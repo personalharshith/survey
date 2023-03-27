@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zeedy Survey</title>
+    <link rel="stylesheet" href="design.css">
+  </head>
+  <body>
+    <h1>Zeedy Survey</h1> 
+    <h2>Q1. Medhod of Payment in canteen</h2>
+    <button class="upi_btn" id="upibtn" type="button" onclick="incrementCount('UPI')">UPI</button>
+    <button class="cash_btn" id="cashbtn" type="button" onclick="incrementCount('CASH')">CASH</button>
+    <br><br>
+    <button class="submit_btn"id="submitButton" type="button" onclick="submitCounts()">Submit</button>
+   
+    <script>
+      var upiCount = 0;
+      var cashCount = 0;
+      function incrementCount(option) {
+        if (option == 'UPI') {
+          upiCount++;
+          document.getElementById('upibtn').innerHTML = 'UPI - ' + upiCount + '';
+        } else if (option == 'CASH') {
+          cashCount++;
+          document.getElementById('cashbtn').innerHTML = 'CASH - ' + cashCount + '';
+        }
+      }
+      function submitCounts() {
+        google.script.run.storeCounts(upiCount , cashCount);
+        upiCount = 0;
+        cashCount = 0;
+        document.getElementById('upibtn').innerHTML = 'UPI';
+        document.getElementById('cashbtn').innerHTML = 'CASH';
+      }
+    </script>
+  </body>
+</html>
