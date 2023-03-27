@@ -5,10 +5,12 @@
     <link rel="stylesheet" href="design.css">
   </head>
   <body>
-    <h1>Zeedy Survey</h1> 
+    <h1>Zeedy Survey</h1> <div class="ques">
     <h2>Q1. Medhod of Payment in canteen</h2>
+    <div class="butDiv">
     <button class="upi_btn" id="upibtn" type="button" onclick="incrementCount('UPI')">UPI</button>
     <button class="cash_btn" id="cashbtn" type="button" onclick="incrementCount('CASH')">CASH</button>
+    </div>
     <br><br>
     <button class="submit_btn"id="submitButton" type="button" onclick="submitCounts()">Submit</button>
    
@@ -32,5 +34,6 @@
         document.getElementById('cashbtn').innerHTML = 'CASH';
       }
     </script>
+    </div>
   </body>
 </html>
